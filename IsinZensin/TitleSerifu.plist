@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>あいさつ</key>
+	<array>
+		<string>こんにちは</string>
+		<string>おはよう</string>
+		<string>おはようございます</string>
+	</array>
+	<key>日常会話</key>
+	<array>
+		<string>21</string>
+		<string>22</string>
+		<string>23</string>
+	</array>
+</dict>
+</plist>

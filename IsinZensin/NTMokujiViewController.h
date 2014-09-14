@@ -1,5 +1,5 @@
 //
-//  NTViewController.h
+//  NTMokujiViewController.h
 //  IsinZensin
 //
 //  Created by ビザンコムマック０９ on 2014/09/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NTViewController : UIViewController
+@interface NTMokujiViewController : UITableViewController < UITableViewDelegate >
 
 @end

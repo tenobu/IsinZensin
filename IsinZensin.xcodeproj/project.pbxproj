@@ -14,13 +14,15 @@
 		070F2E5119C3297800A0A024 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E5019C3297800A0A024 /* main.m */; };
 		070F2E5519C3297800A0A024 /* NTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E5419C3297800A0A024 /* NTAppDelegate.m */; };
 		070F2E5819C3297800A0A024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070F2E5619C3297800A0A024 /* Main.storyboard */; };
-		070F2E5B19C3297800A0A024 /* NTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E5A19C3297800A0A024 /* NTViewController.m */; };
 		070F2E5D19C3297800A0A024 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070F2E5C19C3297800A0A024 /* Images.xcassets */; };
 		070F2E6419C3297800A0A024 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F2E6319C3297800A0A024 /* XCTest.framework */; };
 		070F2E6519C3297800A0A024 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F2E4419C3297800A0A024 /* Foundation.framework */; };
 		070F2E6619C3297800A0A024 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F2E4819C3297800A0A024 /* UIKit.framework */; };
 		070F2E6E19C3297800A0A024 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 070F2E6C19C3297800A0A024 /* InfoPlist.strings */; };
 		070F2E7019C3297800A0A024 /* IsinZensinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E6F19C3297800A0A024 /* IsinZensinTests.m */; };
+		070F2E7B19C32AA400A0A024 /* NTMokujiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E7A19C32AA400A0A024 /* NTMokujiViewController.m */; };
+		070F2E7E19C3C56100A0A024 /* NTSerifu2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E7D19C3C56100A0A024 /* NTSerifu2ViewController.m */; };
+		070F2EC419C46CA100A0A024 /* TitleSerifu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F2EC319C46CA100A0A024 /* TitleSerifu.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,17 @@
 		070F2E5319C3297800A0A024 /* NTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTAppDelegate.h; sourceTree = "<group>"; };
 		070F2E5419C3297800A0A024 /* NTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTAppDelegate.m; sourceTree = "<group>"; };
 		070F2E5719C3297800A0A024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		070F2E5919C3297800A0A024 /* NTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTViewController.h; sourceTree = "<group>"; };
-		070F2E5A19C3297800A0A024 /* NTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTViewController.m; sourceTree = "<group>"; };
 		070F2E5C19C3297800A0A024 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		070F2E6219C3297800A0A024 /* IsinZensinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsinZensinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		070F2E6319C3297800A0A024 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		070F2E6B19C3297800A0A024 /* IsinZensinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IsinZensinTests-Info.plist"; sourceTree = "<group>"; };
 		070F2E6D19C3297800A0A024 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		070F2E6F19C3297800A0A024 /* IsinZensinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsinZensinTests.m; sourceTree = "<group>"; };
+		070F2E7919C32AA400A0A024 /* NTMokujiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMokujiViewController.h; sourceTree = "<group>"; };
+		070F2E7A19C32AA400A0A024 /* NTMokujiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMokujiViewController.m; sourceTree = "<group>"; };
+		070F2E7C19C3C56100A0A024 /* NTSerifu2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSerifu2ViewController.h; sourceTree = "<group>"; };
+		070F2E7D19C3C56100A0A024 /* NTSerifu2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTSerifu2ViewController.m; sourceTree = "<group>"; };
+		070F2EC319C46CA100A0A024 /* TitleSerifu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TitleSerifu.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +120,13 @@
 				070F2E5319C3297800A0A024 /* NTAppDelegate.h */,
 				070F2E5419C3297800A0A024 /* NTAppDelegate.m */,
 				070F2E5619C3297800A0A024 /* Main.storyboard */,
-				070F2E5919C3297800A0A024 /* NTViewController.h */,
-				070F2E5A19C3297800A0A024 /* NTViewController.m */,
+				070F2E7919C32AA400A0A024 /* NTMokujiViewController.h */,
+				070F2E7A19C32AA400A0A024 /* NTMokujiViewController.m */,
+				070F2E7C19C3C56100A0A024 /* NTSerifu2ViewController.h */,
+				070F2E7D19C3C56100A0A024 /* NTSerifu2ViewController.m */,
 				070F2E5C19C3297800A0A024 /* Images.xcassets */,
 				070F2E4B19C3297800A0A024 /* Supporting Files */,
+				070F2EC319C46CA100A0A024 /* TitleSerifu.plist */,
 			);
 			path = IsinZensin;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 				070F2E5D19C3297800A0A024 /* Images.xcassets in Resources */,
 				070F2E4F19C3297800A0A024 /* InfoPlist.strings in Resources */,
 				070F2E5819C3297800A0A024 /* Main.storyboard in Resources */,
+				070F2EC419C46CA100A0A024 /* TitleSerifu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070F2E5B19C3297800A0A024 /* NTViewController.m in Sources */,
 				070F2E5519C3297800A0A024 /* NTAppDelegate.m in Sources */,
 				070F2E5119C3297800A0A024 /* main.m in Sources */,
+				070F2E7E19C3C56100A0A024 /* NTSerifu2ViewController.m in Sources */,
+				070F2E7B19C32AA400A0A024 /* NTMokujiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
