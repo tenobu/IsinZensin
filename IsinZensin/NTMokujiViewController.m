@@ -10,6 +10,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "NTSerifu2ViewController.h"
+#import "NTTableViewCell_1.h"
 
 @interface NTMokujiViewController ()
 {
@@ -62,7 +63,9 @@
 	
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
+																			   target: self
+																			   action: @selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
 
 }
@@ -74,21 +77,26 @@
 
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView
 {
 
-    return 2;
+    return 3;
 
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView: (UITableView *)tableView
+ numberOfRowsInSection: (NSInteger)section
 {
 
 	if ( section == 0 ) {
 		
-		return [array_Mokuji count];
+		return 1;
 		
 	} else if ( section == 1 ) {
+		
+		return [array_Mokuji count];
+		
+	} else if ( section == 2 ) {
 		
 		return [array_Original count];
 		
@@ -100,17 +108,32 @@
 	
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView: (UITableView *)tableView
+		 cellForRowAtIndexPath: (NSIndexPath *)indexPath
 {
     
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell"
-															forIndexPath: indexPath];
-
+	UITableViewCell *cell = nil;
+	
     if ( indexPath.section == 0 ) {
 		
-		cell.textLabel.text = [array_Mokuji objectAtIndex: indexPath.row];
-
+		NTTableViewCell_1 *cell_1 = [tableView dequeueReusableCellWithIdentifier: @"Cell_1"
+																	forIndexPath: indexPath];
+		
+		cell_1.switch_Rokuon = NO;
+		
+		cell = cell_1;
+		
 	} else if ( indexPath.section == 1 ) {
+		
+		cell = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
+											   forIndexPath: indexPath];
+		
+		cell.textLabel.text = [array_Mokuji objectAtIndex: indexPath.row];
+		
+	} else if ( indexPath.section == 2 ) {
+		
+		cell = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
+											   forIndexPath: indexPath];
 		
 		cell.textLabel.text = [array_Original objectAtIndex: indexPath.row];
 		
@@ -120,14 +143,9 @@
 	
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-	return indexPath;
-	
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView: (UITableView *)tableView
+  willDisplayCell: (UITableViewCell *)cell
+forRowAtIndexPath: (NSIndexPath *)indexPath
 {
 	
 }
@@ -144,25 +162,68 @@
 	
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)    tableView: (UITableView *)tableView
+canEditRowAtIndexPath: (NSIndexPath *)indexPath
 {
+
     // Return NO if you do not want the specified item to be editable.
     return YES;
+
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView: (UITableView *)tableView
+commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath: (NSIndexPath *)indexPath
 {
+
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // [mokuji removeObjectAtIndex: indexPath.row];
         // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSIndexPath *)tableView: (UITableView *)tableView
+  willSelectRowAtIndexPath: (NSIndexPath *)indexPath
+{
+	
+	NSInteger section = indexPath.section;
+	//NSInteger row     = indexPath.row;
+	
+	NSLog( @"willSelect = %d", section );
+	
+	if ( section == 0 ) {
+		
+		NSLog( @"return = nil" );
+
+		return nil;
+
+	} else if ( section == 1 ) {
+		
+		return indexPath;
+		
+	} else if ( section == 2 ) {
+		
+		NSLog( @"return = nil" );
+		
+		return nil;
+
+	}
+	
+	NSLog( @"return = nil" );
+	
+	return nil;
+
+}
+
+
+- (void)      tableView: (UITableView *)tableView
+didSelectRowAtIndexPath: (NSIndexPath *)indexPath
 {
     
+
 	/*[self performSegueWithIdentifier: @"showDetail"
                               sender: [NSString stringWithFormat:@"%d", indexPath.row + 1]];*/
 
@@ -171,11 +232,32 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
-	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+	/*NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-	id tanmatu = [segue destinationViewController];
+	NSInteger section = indexPath.section;
+	NSInteger row     = indexPath.row;
 	
-    [tanmatu setDetailItem: array_Mokuji[indexPath.row]];
+	if ( section == 0 ) {
+		
+	} else if ( section == 1 ) {
+		
+		id tanmatu = [segue destinationViewController];
+		
+		[tanmatu setDetailItem: array_Mokuji[row]];
+		
+	} else if ( section == 2 ) {
+		
+	}*/
+	
+	if ( [[segue identifier] isEqualToString: @"showDetail_2"] ) {
+		
+		id tanmatu = [segue destinationViewController];
+		
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		
+		[tanmatu setDetailItem: array_Mokuji[indexPath.row]];
+		
+	}
 
 }
 

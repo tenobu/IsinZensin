@@ -23,6 +23,7 @@
 		070F2E7B19C32AA400A0A024 /* NTMokujiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E7A19C32AA400A0A024 /* NTMokujiViewController.m */; };
 		070F2E7E19C3C56100A0A024 /* NTSerifu2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2E7D19C3C56100A0A024 /* NTSerifu2ViewController.m */; };
 		070F2EC419C46CA100A0A024 /* TitleSerifu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F2EC319C46CA100A0A024 /* TitleSerifu.plist */; };
+		070F2EC719C5C80800A0A024 /* NTTableViewCell_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		070F2E7C19C3C56100A0A024 /* NTSerifu2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSerifu2ViewController.h; sourceTree = "<group>"; };
 		070F2E7D19C3C56100A0A024 /* NTSerifu2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTSerifu2ViewController.m; sourceTree = "<group>"; };
 		070F2EC319C46CA100A0A024 /* TitleSerifu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TitleSerifu.plist; sourceTree = "<group>"; };
+		070F2EC519C5C80800A0A024 /* NTTableViewCell_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTableViewCell_1.h; sourceTree = "<group>"; };
+		070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTableViewCell_1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +125,12 @@
 				070F2E5619C3297800A0A024 /* Main.storyboard */,
 				070F2E7919C32AA400A0A024 /* NTMokujiViewController.h */,
 				070F2E7A19C32AA400A0A024 /* NTMokujiViewController.m */,
+				070F2EC519C5C80800A0A024 /* NTTableViewCell_1.h */,
+				070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */,
 				070F2E7C19C3C56100A0A024 /* NTSerifu2ViewController.h */,
 				070F2E7D19C3C56100A0A024 /* NTSerifu2ViewController.m */,
 				070F2E5C19C3297800A0A024 /* Images.xcassets */,
 				070F2E4B19C3297800A0A024 /* Supporting Files */,
-				070F2EC319C46CA100A0A024 /* TitleSerifu.plist */,
 			);
 			path = IsinZensin;
 			sourceTree = "<group>";
@@ -138,6 +142,7 @@
 				070F2E4D19C3297800A0A024 /* InfoPlist.strings */,
 				070F2E5019C3297800A0A024 /* main.m */,
 				070F2E5219C3297800A0A024 /* IsinZensin-Prefix.pch */,
+				070F2EC319C46CA100A0A024 /* TitleSerifu.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				070F2E5119C3297800A0A024 /* main.m in Sources */,
 				070F2E7E19C3C56100A0A024 /* NTSerifu2ViewController.m in Sources */,
 				070F2E7B19C32AA400A0A024 /* NTMokujiViewController.m in Sources */,
+				070F2EC719C5C80800A0A024 /* NTTableViewCell_1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
