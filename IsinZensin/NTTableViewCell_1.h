@@ -10,6 +10,6 @@
 
 @interface NTTableViewCell_1 : UITableViewCell
 
-@property UISwitch *switch_Rokuon;
+@property (weak, nonatomic) IBOutlet UISwitch *switch_Rokuon;
 
 @end

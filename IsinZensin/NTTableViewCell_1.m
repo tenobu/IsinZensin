@@ -8,9 +8,12 @@
 
 #import "NTTableViewCell_1.h"
 
+#import "NTAudioRecorder.h"
+
 @implementation NTTableViewCell_1
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithStyle: (UITableViewCellStyle)style
+	reuseIdentifier: (NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -24,11 +27,24 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)setSelected: (BOOL)selected
+		   animated: (BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)switch_Action: (id)sender
+{
+
+	NSLog( @"switch = %d", self.switch_Rokuon.on );
+	
+	if ( self.switch_Rokuon.on == YES ) {
+	
+		
+	}
+	
 }
 
 @end

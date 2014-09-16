@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property BOOL bool_Rokuon;
+
 @end

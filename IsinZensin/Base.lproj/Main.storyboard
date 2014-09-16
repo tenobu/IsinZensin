@@ -35,19 +35,43 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuR-kp-2NO">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vuR-kp-2NO">
                                             <rect key="frame" x="20" y="6" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switch_Action:" destination="bbG-8X-EXy" eventType="valueChanged" id="Hsr-tx-RcF"/>
+                                            </connections>
                                         </switch>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="録音" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zin-Fs-bvt">
-                                            <rect key="frame" x="77" y="11" width="34" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="録音停止" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zin-Fs-bvt">
+                                            <rect key="frame" x="77" y="11" width="68" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDi-zs-exw">
+                                            <rect key="frame" x="213" y="11" width="87" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="87" id="qfl-7E-NQ0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FDi-zs-exw" firstAttribute="centerY" secondItem="vuR-kp-2NO" secondAttribute="centerY" id="6WD-Ri-zIa"/>
+                                        <constraint firstItem="zin-Fs-bvt" firstAttribute="leading" secondItem="vuR-kp-2NO" secondAttribute="trailing" constant="8" symbolic="YES" id="Q7j-ju-AEo"/>
+                                        <constraint firstAttribute="trailing" secondItem="FDi-zs-exw" secondAttribute="trailing" constant="20" id="TJd-rp-iO2"/>
+                                        <constraint firstItem="FDi-zs-exw" firstAttribute="centerY" secondItem="Z1y-aR-Cxi" secondAttribute="centerY" id="fVU-rc-UAu"/>
+                                        <constraint firstItem="FDi-zs-exw" firstAttribute="leading" secondItem="zin-Fs-bvt" secondAttribute="trailing" constant="68" id="h49-J9-Vw9"/>
+                                        <constraint firstItem="FDi-zs-exw" firstAttribute="baseline" secondItem="zin-Fs-bvt" secondAttribute="baseline" id="hr9-WE-bHB"/>
+                                        <constraint firstItem="vuR-kp-2NO" firstAttribute="leading" secondItem="Z1y-aR-Cxi" secondAttribute="leading" constant="20" id="wGL-qy-imB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="switch_Rokuon" destination="vuR-kp-2NO" id="hD2-Kg-9Ls"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell_2" textLabel="w7x-hZ-8PK" style="IBUITableViewCellStyleDefault" id="3Bd-Mq-gEf">
                                 <rect key="frame" x="0.0" y="163" width="320" height="44"/>

@@ -8,9 +8,10 @@
 
 #import "NTMokujiViewController.h"
 
-#import <AVFoundation/AVFoundation.h>
+#import "NTAppDelegate.h"
 #import "NTSerifu2ViewController.h"
 #import "NTTableViewCell_1.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface NTMokujiViewController ()
 {
@@ -112,34 +113,40 @@
 		 cellForRowAtIndexPath: (NSIndexPath *)indexPath
 {
     
-	UITableViewCell *cell = nil;
-	
-    if ( indexPath.section == 0 ) {
+	if ( indexPath.section == 0 ) {
 		
 		NTTableViewCell_1 *cell_1 = [tableView dequeueReusableCellWithIdentifier: @"Cell_1"
 																	forIndexPath: indexPath];
 		
-		cell_1.switch_Rokuon = NO;
+		cell_1.switch_Rokuon.on = NO;
 		
-		cell = cell_1;
+		NTAppDelegate *app = [[UIApplication sharedApplication] delegate];
+		
+		app.bool_Rokuon = NO;
+		
+		return cell_1;
 		
 	} else if ( indexPath.section == 1 ) {
 		
-		cell = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
-											   forIndexPath: indexPath];
+		UITableViewCell *cell_2 = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
+																  forIndexPath: indexPath];
 		
-		cell.textLabel.text = [array_Mokuji objectAtIndex: indexPath.row];
+		cell_2.textLabel.text = [array_Mokuji objectAtIndex: indexPath.row];
+		
+		return cell_2;
 		
 	} else if ( indexPath.section == 2 ) {
 		
-		cell = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
-											   forIndexPath: indexPath];
+		UITableViewCell *cell_3 = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
+																  forIndexPath: indexPath];
 		
-		cell.textLabel.text = [array_Original objectAtIndex: indexPath.row];
+		cell_3.textLabel.text = [array_Original objectAtIndex: indexPath.row];
+
+		return cell_3;
 		
 	}
 
-    return cell;
+    return nil;
 	
 }
 
@@ -218,17 +225,6 @@ commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
 
 }
 
-
-- (void)      tableView: (UITableView *)tableView
-didSelectRowAtIndexPath: (NSIndexPath *)indexPath
-{
-    
-
-	/*[self performSegueWithIdentifier: @"showDetail"
-                              sender: [NSString stringWithFormat:@"%d", indexPath.row + 1]];*/
-
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
@@ -259,6 +255,15 @@ didSelectRowAtIndexPath: (NSIndexPath *)indexPath
 		
 	}
 
+}
+
+- (void)      tableView: (UITableView *)tableView
+didSelectRowAtIndexPath: (NSIndexPath *)indexPath
+{
+    
+	/*[self performSegueWithIdentifier: @"showDetail"
+	 sender: [NSString stringWithFormat:@"%d", indexPath.row + 1]];*/
+	
 }
 
 @end
