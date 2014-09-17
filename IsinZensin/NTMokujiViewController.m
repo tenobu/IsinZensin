@@ -285,11 +285,11 @@ commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
 	NSInteger section = indexPath.section;
 	//NSInteger row     = indexPath.row;
 	
-	NSLog( @"willSelect = %d", section );
+	//NSLog( @"willSelect = %d", section );
 	
 	if ( section == 0 ) {
 		
-		NSLog( @"return = nil" );
+		//NSLog( @"return = nil" );
 
 		return nil;
 
@@ -299,13 +299,13 @@ commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
 		
 	} else if ( section == 2 ) {
 		
-		NSLog( @"return = nil" );
+		//NSLog( @"return = nil" );
 		
 		return nil;
 
 	}
 	
-	NSLog( @"return = nil" );
+	//NSLog( @"return = nil" );
 	
 	return nil;
 
