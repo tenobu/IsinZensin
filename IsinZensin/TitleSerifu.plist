@@ -2,17 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>わかれ</key>
+	<array>
+		<array/>
+		<integer>9999</integer>
+	</array>
 	<key>あいさつ</key>
 	<array>
-		<string>こんにちは</string>
-		<string>おはよう</string>
-		<string>おはようございます</string>
+		<integer>1</integer>
+		<array>
+			<string>おはよう</string>
+			<string>おはようございます</string>
+			<string>こんにちは</string>
+		</array>
 	</array>
 	<key>日常会話</key>
 	<array>
-		<string>21</string>
-		<string>22</string>
-		<string>23</string>
+		<integer>2</integer>
+		<array>
+			<string>21</string>
+			<string>22</string>
+			<string>23</string>
+		</array>
 	</array>
 </dict>
 </plist>

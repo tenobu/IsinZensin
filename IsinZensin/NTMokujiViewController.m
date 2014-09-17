@@ -18,8 +18,11 @@
 
 @private
 	
-	NSArray        *array_Mokuji;
+	//NSArray        *array_Mokuji;
+	NSMutableArray *array_Mokuji;
+	//NSMutableDictionary *dir_Mokuji;
 	NSMutableArray *array_Original;
+	//NSMutableDictionary *dir_Original;
 
 }
 
@@ -45,13 +48,94 @@
 
     [super viewDidLoad];
     
+	NSBundle* bundle = [NSBundle mainBundle];
+	
 	// 固定台詞定義
-	array_Mokuji = [NSArray arrayWithObjects: @"あいさつ", @"日常会話", @"わかれ", nil];
+	//array_Mokuji = [NSArray arrayWithObjects: @"あいさつ", @"日常会話", @"わかれ", nil];
+	array_Mokuji = [[NSMutableArray alloc] init];
+	//dir_Mokuji = [[NSMutableDictionary alloc] init];
+	
+	// 読み込むファイルパスを指定
+	NSString *path = [bundle pathForResource:@"TitleSerifu" ofType:@"plist"];
+	
+	// plistの読み込み
+	NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile: path];
+	
+	// エラーをクリア
+	BOOL bool_errorflag = YES;
+	
+	// Titleの読み込み
+	for ( NSString *key in [dic allKeys] ) {
+		
+		// dirの初期化
+		NSMutableDictionary *dir_data = [[NSMutableDictionary alloc] init];
+		
+		// TitleDataのarray
+		NSArray *array = (NSArray *)[dic objectForKey: key];
+		
+		// TitleDataの読み込み
+		for ( id obj in array ) {
+		
+			// Dataの型を文字列に変換
+			NSString *str = NSStringFromClass( [obj class] );
+			
+			// Dataの型を確認
+			//if ( [NSStringFromClass( [obj class] ) isEqualToString: @"NSNumber"] ) {
+			// 思った通りにNSNumberにならない
+			if ( [str isEqualToString: @"__NSCFNumber"] ) {
+
+				//NSNumber *number = obj;
+				
+				// 順番を足す
+				[dir_data setObject: obj forKey: @"jyunban"];
+				
+				break;
+				
+			}
+			
+		}
+		
+		// Titleを足す
+		[dir_data setObject: key forKey: @"title"];
+		
+		// dir_dataを足す
+		[array_Mokuji addObject: dir_data];
+		
+	}
+	
+	// 順番通りにsortする
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: @"jyunban"
+																   ascending: YES];
+	
+	[array_Mokuji sortUsingDescriptors: @[sortDescriptor]];
+	
+	// エラー処理
+	if ( bool_errorflag ) {
+		
+	}
+
+	bool_errorflag = YES;
 	
 	// オリジナル台詞定義
 	array_Original = [[NSMutableArray alloc] init];
 	
-	[array_Original addObject: @"11111"];
+	//読み込むファイルパスを指定
+	path = [bundle pathForResource:@"OriginalSerifu" ofType:@"plist"];
+	
+	dic = [NSDictionary dictionaryWithContentsOfFile: path];
+	
+	for ( NSString *key in [dic allKeys] ) {
+		
+		[array_Original addObject: key];
+		
+	}
+	
+	// エラー処理
+	if ( bool_errorflag ) {
+		
+	}
+
+	//[array_Original addObject: @"11111"];
 	
 	
 	//self.tableView.allowsMultipleSelection = NO;
@@ -131,7 +215,9 @@
 		UITableViewCell *cell_2 = [tableView dequeueReusableCellWithIdentifier: @"Cell_2"
 																  forIndexPath: indexPath];
 		
-		cell_2.textLabel.text = [array_Mokuji objectAtIndex: indexPath.row];
+		NSDictionary *dir = [array_Mokuji objectAtIndex: indexPath.row];
+		
+		cell_2.textLabel.text = [dir objectForKey: @"title"];
 		
 		return cell_2;
 		
@@ -251,7 +337,11 @@ commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
 		
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 		
-		[tanmatu setDetailItem: array_Mokuji[indexPath.row]];
+		NSDictionary *dir = [array_Mokuji objectAtIndex: indexPath.row];
+		
+		NSString *str_mokuji = [dir objectForKey: @"title"];
+
+		[tanmatu setDetailItem: str_mokuji];
 		
 	}
 

@@ -49,19 +49,40 @@
 	NSBundle* bundle = [NSBundle mainBundle];
 	
 	//読み込むファイルパスを指定
-	NSString *path = [bundle pathForResource:@"TitleSerifu" ofType:@"plist"];
+	NSString *path = [bundle pathForResource: @"TitleSerifu"
+									  ofType: @"plist"];
 	
-	NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+	// plistの読み込み
+	NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile: path];
 	
+	// エラーをクリア
 	BOOL bool_errorflag = YES;
 	
+	// Titleの読み込み
 	for ( NSString *key in [dic allKeys] ) {
 
 		if ( [key isEqualToString: string_Mokuji] ) {
 	
 			[self.navigationItem setTitle: string_Mokuji];
 			
-			array_Serifu = (NSArray *)[dic objectForKey: string_Mokuji];
+			NSArray *array = (NSArray *)[dic objectForKey: string_Mokuji];
+
+			for ( id obj in array ) {
+				
+				// Dataの型を文字列に変換
+				NSString *str = NSStringFromClass( [obj class] );
+				
+				// Dataの型を確認
+				if ( [str isEqualToString: @"__NSCFArray"] ) {
+					
+					// NSArrayを入れる
+					array_Serifu = (NSArray *)obj;
+					
+					break;
+					
+				}
+
+			}
 			
 			[self.tableView reloadData];
 			

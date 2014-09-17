@@ -25,6 +25,7 @@
 		070F2EC419C46CA100A0A024 /* TitleSerifu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F2EC319C46CA100A0A024 /* TitleSerifu.plist */; };
 		070F2EC719C5C80800A0A024 /* NTTableViewCell_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */; };
 		070F2ECD19C7211F00A0A024 /* NTAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2ECC19C7211F00A0A024 /* NTAudioRecorder.m */; };
+		070F2ECF19C9143A00A0A024 /* OriginalSerifu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F2ECE19C9143A00A0A024 /* OriginalSerifu.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTableViewCell_1.m; sourceTree = "<group>"; };
 		070F2ECB19C7211F00A0A024 /* NTAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTAudioRecorder.h; sourceTree = "<group>"; };
 		070F2ECC19C7211F00A0A024 /* NTAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTAudioRecorder.m; sourceTree = "<group>"; };
+		070F2ECE19C9143A00A0A024 /* OriginalSerifu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OriginalSerifu.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				070F2E5019C3297800A0A024 /* main.m */,
 				070F2E5219C3297800A0A024 /* IsinZensin-Prefix.pch */,
 				070F2EC319C46CA100A0A024 /* TitleSerifu.plist */,
+				070F2ECE19C9143A00A0A024 /* OriginalSerifu.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				070F2E4F19C3297800A0A024 /* InfoPlist.strings in Resources */,
 				070F2E5819C3297800A0A024 /* Main.storyboard in Resources */,
 				070F2EC419C46CA100A0A024 /* TitleSerifu.plist in Resources */,
+				070F2ECF19C9143A00A0A024 /* OriginalSerifu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +405,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsinZensin/IsinZensin-Prefix.pch";
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "IsinZensin/IsinZensin-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -414,6 +420,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsinZensin/IsinZensin-Prefix.pch";
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "IsinZensin/IsinZensin-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
