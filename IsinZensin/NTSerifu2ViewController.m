@@ -8,6 +8,7 @@
 
 #import "NTSerifu2ViewController.h"
 
+#import "NTToolbar.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface NTSerifu2ViewController ()
@@ -105,6 +106,35 @@
 	// 音声合成を初期化
 	speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
 	
+	
+	/*self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
+																			   target: self
+																			   action: @selector(insertNewObject:)];
+	self.navigationItem.rightBarButtonItem = addButton;*/
+
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
+																			   target: self
+																			   action: @selector(insertNewObject:)];
+	
+	UIBarButtonItem *editButton = self.editButtonItem;
+	
+	editButton.style = UIBarButtonItemStyleBordered;
+	
+	UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+	
+	NTToolbar *toolbar = [[NTToolbar alloc] initWithFrame: CGRectMake( 0.0f, 0.0f, 110.0f, 44.0f )];
+	
+	toolbar.backgroundColor = [UIColor clearColor];
+	toolbar.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+	
+	UIBarButtonItem *toolbarBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbar];
+	
+	toolbar.items = [NSArray arrayWithObjects:space, editButton, addButton, nil];
+	
+	self.navigationItem.rightBarButtonItem = toolbarBarButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,6 +184,18 @@
 	cell.textLabel.text = [array_Serifu objectAtIndex: indexPath.row];
 	
     return cell;
+	
+}
+
+- (void)insertNewObject:(id)sender
+{
+	
+    /*if (!_objects) {
+	 _objects = [[NSMutableArray alloc] init];
+	 }
+	 [_objects insertObject:[NSDate date] atIndex:0];
+	 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	 [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];*/
 	
 }
 

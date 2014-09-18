@@ -9,6 +9,7 @@
 #import "NTMokujiViewController.h"
 
 #import "NTAppDelegate.h"
+#import "NTToolbar.h"
 #import "NTSerifu2ViewController.h"
 #import "NTTableViewCell_1.h"
 #import <AVFoundation/AVFoundation.h>
@@ -146,13 +147,37 @@
 	
 	self.navigationItem.title = @"タイトル";
 	
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	//self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	
+	/*UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
+																			   target: self
+																			   action: @selector(insertNewObject:)];
+	self.navigationItem.rightBarButtonItem = addButton;*/
+
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd
 																			   target: self
 																			   action: @selector(insertNewObject:)];
-	self.navigationItem.rightBarButtonItem = addButton;
+	
+	/*UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCamera
+																				target: self
+																				action: @selector(cancel:)];*/
+	UIBarButtonItem *editButton = self.editButtonItem;
+	
+	editButton.style = UIBarButtonItemStyleBordered;
+	
+	UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+	
+	NTToolbar *toolbar = [[NTToolbar alloc] initWithFrame: CGRectMake( 0.0f, 0.0f, 110.0f, 44.0f )];
+	
+	toolbar.backgroundColor = [UIColor clearColor];
+	toolbar.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+	
+	UIBarButtonItem *toolbarBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbar];
 
+	toolbar.items = [NSArray arrayWithObjects:space, editButton, addButton, nil];
+	
+	self.navigationItem.rightBarButtonItem = toolbarBarButtonItem;
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -259,8 +284,21 @@ forRowAtIndexPath: (NSIndexPath *)indexPath
 canEditRowAtIndexPath: (NSIndexPath *)indexPath
 {
 
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+	if ( indexPath.section == 0 ) {
+		
+		return NO;
+		
+	} else if ( indexPath.section == 1 ) {
+		
+		return YES;
+		
+	} else if ( indexPath.section == 2 ) {
+		
+		return YES;
+		
+	}
+	
+    return NO;
 
 }
 
@@ -269,6 +307,7 @@ commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath: (NSIndexPath *)indexPath
 {
 
+	
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // [mokuji removeObjectAtIndex: indexPath.row];
         // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

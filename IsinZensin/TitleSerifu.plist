@@ -4,12 +4,17 @@
 <dict>
 	<key>わかれ</key>
 	<array>
-		<array/>
-		<integer>9999</integer>
+		<array>
+			<string>さようなら</string>
+			<string>またあう日まで</string>
+		</array>
+		<real>9999</real>
+		<false/>
 	</array>
 	<key>あいさつ</key>
 	<array>
 		<integer>1</integer>
+		<false/>
 		<array>
 			<string>おはよう</string>
 			<string>おはようございます</string>
@@ -19,6 +24,7 @@
 	<key>日常会話</key>
 	<array>
 		<integer>2</integer>
+		<false/>
 		<array>
 			<string>21</string>
 			<string>22</string>

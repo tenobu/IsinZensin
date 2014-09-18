@@ -26,6 +26,7 @@
 		070F2EC719C5C80800A0A024 /* NTTableViewCell_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */; };
 		070F2ECD19C7211F00A0A024 /* NTAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F2ECC19C7211F00A0A024 /* NTAudioRecorder.m */; };
 		070F2ECF19C9143A00A0A024 /* OriginalSerifu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F2ECE19C9143A00A0A024 /* OriginalSerifu.plist */; };
+		07EA694A19CA5C2900D2988C /* NTToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EA694919CA5C2900D2988C /* NTToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		070F2ECB19C7211F00A0A024 /* NTAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTAudioRecorder.h; sourceTree = "<group>"; };
 		070F2ECC19C7211F00A0A024 /* NTAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTAudioRecorder.m; sourceTree = "<group>"; };
 		070F2ECE19C9143A00A0A024 /* OriginalSerifu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OriginalSerifu.plist; sourceTree = "<group>"; };
+		07EA694819CA5C2900D2988C /* NTToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTToolbar.h; sourceTree = "<group>"; };
+		07EA694919CA5C2900D2988C /* NTToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTToolbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				070F2E5619C3297800A0A024 /* Main.storyboard */,
 				070F2E7919C32AA400A0A024 /* NTMokujiViewController.h */,
 				070F2E7A19C32AA400A0A024 /* NTMokujiViewController.m */,
+				07EA694819CA5C2900D2988C /* NTToolbar.h */,
+				07EA694919CA5C2900D2988C /* NTToolbar.m */,
 				070F2EC519C5C80800A0A024 /* NTTableViewCell_1.h */,
 				070F2EC619C5C80800A0A024 /* NTTableViewCell_1.m */,
 				070F2ECB19C7211F00A0A024 /* NTAudioRecorder.h */,
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EA694A19CA5C2900D2988C /* NTToolbar.m in Sources */,
 				070F2ECD19C7211F00A0A024 /* NTAudioRecorder.m in Sources */,
 				070F2E5519C3297800A0A024 /* NTAppDelegate.m in Sources */,
 				070F2E5119C3297800A0A024 /* main.m in Sources */,
@@ -487,6 +493,7 @@
 				070F2E7519C3297800A0A024 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070F2E7619C3297800A0A024 /* Build configuration list for PBXNativeTarget "IsinZensinTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +502,7 @@
 				070F2E7819C3297800A0A024 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
